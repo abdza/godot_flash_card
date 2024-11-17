@@ -1,0 +1,153 @@
+[gd_scene load_steps=2 format=3 uid="uid://xxxxxxxxxxxx"]
+
+[ext_resource type="Script" path="res://scenes/game_over_scene.gd" id="1_xxxxx"]
+
+[node name="GameOverScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxxxx")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.12, 0.15, 1)
+
+[node name="HighScoresContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -166.0
+offset_right = 206.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HighScoresLabel" type="Label" parent="HighScoresContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "High Scores"
+horizontal_alignment = 1
+
+[node name="ScoresList" type="VBoxContainer" parent="HighScoresContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="GameOverContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -199.0
+offset_top = 31.0
+offset_right = 201.0
+offset_bottom = 147.0
+grow_horizontal = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Game Over!"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 32
+text = "Final Score: 0"
+horizontal_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -180.0
+offset_right = 300.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "Checking high score..."
+horizontal_alignment = 1
+
+[node name="NameInputContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -130.0
+offset_right = 200.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="NameInput" type="LineEdit" parent="NameInputContainer"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+theme_override_colors/font_placeholder_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/font_color = Color(0.845823, 0.870353, 0.966724, 1)
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Enter your name"
+alignment = 1
+max_length = 20
+
+[node name="SubmitButton" type="Button" parent="NameInputContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Submit Score"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="PlayAgainButton" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Play Again"
+
+[node name="MainMenuButton" type="Button" parent="ButtonsContainer"]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
